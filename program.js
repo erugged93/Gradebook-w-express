@@ -8,10 +8,10 @@ app.get("/", function(req, res) {
 });
 
 app.get("/grade", function(req,res) {
-	console.log(req);
+	// console.log(req);
 	var grades = req.query.grades.split(',');
 	for (var i = 0; i < grades.length; i+= 2) {
-		book.addGrade(parseInt(grades[i], grades[i+1]));
+		book.addGrade(parseInt(grades[i]), parseInt(grades[i+1]));
 	}
 	var average = book.getAverage();
 	var letterGrade = book.getLetterGrade();
